@@ -7,6 +7,7 @@ from pydantic import BaseModel
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import AzureSearch
 from dotenv import load_dotenv
+from fastapi.staticfiles import StaticFiles
 
 #Load credentials
 load_dotenv('.env')
@@ -59,9 +60,10 @@ acs = AzureSearch(azure_search_endpoint = openai_search_endpoint,
 class Body(BaseModel):
     query:str
 
-@app.get('/')
-def root():
-    return RedirectResponse(url = '/docs', status_code = 301)
+# @app.get('/')
+# def root():
+#     return RedirectResponse(url = '/docs', status_code = 301)
+
 
 @app.post('/recommend')
 def recommend(body: Body):
@@ -91,3 +93,5 @@ def assistant(query, search_results):
     )
 
     return response['choices'][0]['message']['content']
+
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
