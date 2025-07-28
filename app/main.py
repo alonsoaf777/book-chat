@@ -8,6 +8,7 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import AzureSearch
 from dotenv import load_dotenv
 from fastapi.staticfiles import StaticFiles
+from azure.core.credentials import AzureKeyCredential
 
 #Load credentials
 load_dotenv('.env')
