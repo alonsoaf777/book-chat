@@ -16,7 +16,7 @@ function App() {
     setChat((prev) => [...prev, userMessage]);
 
     try {
-      const res = await axios.post('http://localhost:8000/recommend', { query });
+      const res = await axios.post('https://book-container-app.ambitiouswave-854a51bb.westus2.azurecontainerapps.io/recommend', { query });
       const botMessage = { sender: 'bot', text: res.data.response};
       setChat((prev) => [...prev, botMessage]);
     } catch (error) {
