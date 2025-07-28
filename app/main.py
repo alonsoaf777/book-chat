@@ -8,7 +8,7 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import AzureSearch
 from dotenv import load_dotenv
 from fastapi.staticfiles import StaticFiles
-from azure.core.credentials import AzureKeyCredential
+
 
 #Load credentials
 load_dotenv('.env')
@@ -54,7 +54,7 @@ embeddings = OpenAIEmbeddings(
 )
 ## Connect to Azure
 acs = AzureSearch(azure_search_endpoint = "https://demo-app-search.search.windows.net",
-                  azure_search_key = AzureKeyCredential(openai_search_key),
+                  azure_search_key = openai_search_key,
                   index_name ="book-index",
                   embedding_function = embeddings.embed_query)
 
