@@ -52,7 +52,7 @@ embeddings = OpenAIEmbeddings(
     openai_api_version = openai_search_source_version         # o la versión que uses en Azure OpenAI
 )
 ## Connect to Azure
-acs = AzureSearch(azure_search_endpoint = openai_search_endpoint,
+acs = AzureSearch(azure_search_endpoint = "https://demo-app-search.search.windows.net",
                   azure_search_key = openai_search_key,
                   index_name = openai_search_index,
                   embedding_function = embeddings.embed_query)
