@@ -19,7 +19,7 @@ function App() {
       const botMessage = { sender: 'bot', text: res.data.response.content };
       setChat((prev) => [...prev, botMessage]);
     } catch (error) {
-      const errorMsg = { sender: 'bot', text: '⚠️ Hubo un error. Intenta de nuevo.' };
+      const errorMsg = { sender: 'bot', text: '⚠️ Error detected. Try again.' };
       setChat((prev) => [...prev, errorMsg]);
     }
 
