@@ -54,7 +54,7 @@ embeddings = OpenAIEmbeddings(
 ## Connect to Azure
 acs = AzureSearch(azure_search_endpoint = "https://demo-app-search.search.windows.net",
                   azure_search_key = openai_search_key,
-                  index_name = openai_search_index,
+                  index_name ="book-index",
                   embedding_function = embeddings.embed_query)
 
 class Body(BaseModel):
