@@ -41,7 +41,7 @@ app.add_middleware(
 openai.api_base = openai_completion_endpoint
 openai.api_key = openai_completion_key
 openai.api_type = "azure"
-openai.api_version = openai_completion_version
+openai.api_version = "2024-12-01-preview"
 
 
 embeddings = OpenAIEmbeddings(
@@ -50,7 +50,7 @@ embeddings = OpenAIEmbeddings(
     openai_api_type = "azure",
     openai_api_base = openai_search_source_endpoint,  # Ojo: NO es el de AI Search
     openai_api_key = openai_search_source_key,
-    openai_api_version = openai_search_source_version         # o la versión que uses en Azure OpenAI
+    openai_api_version = "2023-05-15"          # o la versión que uses en Azure OpenAI
 )
 ## Connect to Azure
 acs = AzureSearch(azure_search_endpoint = "https://demo-app-search.search.windows.net",
