@@ -70,6 +70,7 @@ class Body(BaseModel):
 def recommend(body: Body):
     search_result = search(body.query)
     chat_bot_response = assistant(body.query, search_result)
+    print(f"{body.query} - Chat: {chat_bot_response}")
     return {'response': chat_bot_response}
 
 def search(query):
@@ -78,7 +79,7 @@ def search(query):
         k=2,
     )
     results = "\n\n".join([doc[0].page_content for doc in docs])
-    print(results)
+    print(docs[0][0].page_content)
     return results
 
 def assistant(query, search_results):

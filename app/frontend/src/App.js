@@ -20,7 +20,7 @@ function App() {
       const botMessage = { sender: 'bot', text: res.data.response};
       setChat((prev) => [...prev, botMessage]);
     } catch (error) {
-      const errorMsg = { sender: 'bot', text: '⚠️ Hubo un error. Intenta de nuevo.' };
+      const errorMsg = { sender: 'bot', text: '⚠️ Error detected. Try again later.' };
       setChat((prev) => [...prev, errorMsg]);
     }
 
@@ -29,6 +29,7 @@ function App() {
 
   return (
     <div className="chat-container">
+      <div className="watermark">Made by AlonsoA IFI</div>
       <h1>BookBotAAF</h1>
 
       <div className="chat-box">

@@ -84,3 +84,17 @@ h1 {
 .input-area button:hover {
   background: #1d4ed8;
 }
+
+.watermark {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.1); /* texto muy claro para efecto difuminado */
+  user-select: none;
+  pointer-events: none; /* para que no interfiera con clicks */
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  z-index: 9999;
+}
