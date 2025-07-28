@@ -44,8 +44,8 @@ openai.api_version = openai_completion_version
 
 
 embeddings = OpenAIEmbeddings(
-    deployment = openai_search_model,   # nombre exacto de tu deployment en Azure OpenAI
-    model = openai_search_model,         # opcional, depende de cómo creaste tu deployment
+    deployment = "book-index",   # nombre exacto de tu deployment en Azure OpenAI
+    model = "text-embedding-ada-002",         # opcional, depende de cómo creaste tu deployment
     openai_api_type = "azure",
     openai_api_base = openai_search_source_endpoint,  # Ojo: NO es el de AI Search
     openai_api_key = openai_search_source_key,
