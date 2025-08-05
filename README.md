@@ -1,7 +1,6 @@
 # book-chat
 This end-to-end chatbot application recommends books based on user queries using a RAG (Retrieval-Augmented Generation) approach. Starting with a Kaggle dataset, I enriched the data via web scraping from OpenLibrary and Google Books to ensure completeness. The dataset was cleaned, filtered with SQL, and indexed using Azure Cognitive Search.
 
-​
 
 Embeddings were generated with OpenAI's text-embedding-ada-002 model, and responses were powered by gpt-4.1. The frontend was built with React and JavaScript, and the entire app was deployed to Azure Container Apps. Logs are monitored in real time via the terminal, supporting full observability and debugging.
 
